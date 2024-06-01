@@ -113,3 +113,17 @@ exports.searchByName = function (req, res) {
         }
     });
 };
+
+exports.getLowestStockBook = function (req, res) {
+    Book.getLowestStockBook(function (err, book) {
+        if (err) {
+            res.status(500).send({ error: true, message: err });
+        } else {
+            res.json({
+                error: false,
+                message: "Book with lowest stock retrieved successfully!",
+                data: book,
+            });
+        }
+    });
+};

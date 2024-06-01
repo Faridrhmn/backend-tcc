@@ -10,6 +10,7 @@ router.put('/books/:idBuku', controllerBuku.update);
 router.get('/books', controllerBuku.getAll);
 router.get('/books/search', controllerBuku.searchByName);
 router.get('/books/:idBuku', controllerBuku.getById);
+router.get('/books/lowest-stock', controllerBuku.getLowestStockBook);
 
 // Penerbit routes
 router.post('/penerbits', controllerPenerbit.create);
