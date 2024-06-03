@@ -32,6 +32,7 @@ exports.delete = function (req, res) {
                 res.status(404).send({ error: true, message: "Book not found in delete" });
             } else {
                 res.json({
+                    status: "success",
                     error: false,
                     message: "Book deleted successfully!",
                 });

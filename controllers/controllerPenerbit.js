@@ -29,9 +29,9 @@ exports.delete = function (req, res) {
             res.send(err);
         } else {
             res.json({
+                status: "success",
                 error: false,
-                message: "Penerbit deleted successfully!",
-                affectedRows: affectedRows,
+                message: "Penerbit deleted successfully!"
             });
         }
     });
