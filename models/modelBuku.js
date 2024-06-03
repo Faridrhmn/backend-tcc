@@ -106,5 +106,18 @@ Book.getLowestStockBook = function(result) {
     });
 };
 
-
+Book.getLow = function(result) {
+    dbConn.query("SELECT * FROM buku ORDER BY Stok LIMIT 1", function(err, res) {
+        if (err) {
+            console.error("Error fetching all books: ", err);
+            result(err, null);
+        } else {
+            if (res.length === 0) {
+                result({ error: true, message: "Book not found di model" }, null);
+            } else {
+                result(null, res[0]);
+            }
+        }
+    });
+};
 module.exports = Book;

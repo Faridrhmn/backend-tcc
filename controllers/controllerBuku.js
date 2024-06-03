@@ -127,3 +127,17 @@ exports.getLowestStockBook = function (req, res) {
         }
     });
 };
+
+exports.getLow = function (req, res) {
+    Book.getLow(function (err, books) {
+        if (err) {
+            res.status(500).send({ error: true, message: "gagal mengambil low buku" });
+        } else {
+            res.json({
+                error: false,
+                message: "stok terendah didapatkan",
+                data: books,
+            });
+        }
+    });
+};

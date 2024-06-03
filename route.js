@@ -11,6 +11,7 @@ router.get('/books', controllerBuku.getAll);
 router.get('/books/search', controllerBuku.searchByName);
 router.get('/books/:idBuku', controllerBuku.getById);
 router.get('/books/lowest-stock', controllerBuku.getLowestStockBook);
+router.get('/books/lowest', controllerBuku.getLow);
 
 // Penerbit routes
 router.post('/penerbits', controllerPenerbit.create);
