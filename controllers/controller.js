@@ -52,7 +52,7 @@ exports.create = function(req, res) {
             return res.status(500).send({ error: true, message: "Internal server error" });
         } else {
             return res.status(201).json({
-                error: false,
+                status: "success",
                 message: "Account created successfully",
                 data: account
             });
