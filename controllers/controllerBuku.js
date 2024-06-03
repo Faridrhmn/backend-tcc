@@ -133,11 +133,15 @@ exports.getLow = function (req, res) {
         if (err) {
             res.status(500).send({ error: true, message: "gagal mengambil low buku" });
         } else {
-            res.json({
-                error: false,
-                message: "stok terendah didapatkan",
-                data: books,
-            });
+            if (books.length === 0) {
+                res.status(404).send({ error: true, message: "Book not found di kontroller" });
+            } else {
+                res.json({
+                    error: false,
+                    message: "stok terendah didapatkan",
+                    data: books,
+                });
+            }
         }
     });
 };
