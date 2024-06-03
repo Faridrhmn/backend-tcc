@@ -117,7 +117,7 @@ exports.searchByName = function (req, res) {
 exports.getLowestStockBook = function (req, res) {
     Book.getLowestStockBook(function (err, book) {
         if (err) {
-            res.status(500).send({ error: true, message: err });
+            res.status(500).send({ error: true, message: "gagal mengambil stok buku" });
         } else {
             res.json({
                 error: false,
