@@ -22,7 +22,11 @@ exports.findUser = function(req, res) {
         } else if (account.length === 0) {
             return res.status(404).send({ message: 'User not found' });
         } else {
-            return res.json(account);
+            return res.status(201).json({
+                status: "success",
+                message: "akun ditemukan",
+                data: account
+            });
         }
     });
 };
