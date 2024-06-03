@@ -96,9 +96,15 @@ Book.getLowestStockBook = function(result) {
             console.error("Error fetching book with lowest stock: ", err);
             result(err, null);
         } else {
-            result(null, res[0]);
+            console.log("Query result: ", res);
+            if (res.length === 0) {
+                result({ error: true, message: "Book not found di model" }, null);
+            } else {
+                result(null, res[0]);
+            }
         }
     });
 };
+
 
 module.exports = Book;
