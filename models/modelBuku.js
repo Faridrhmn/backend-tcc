@@ -107,10 +107,10 @@ Book.getLowestStockBook = function(result) {
 };
 
 Book.getLow = function(result) {
-    dbConn.query("SELECT * FROM buku ORDER BY Stok LIMIT 1", function(err, res) {
+    dbConn.query("SELECT * FROM buku WHERE Stok = (SELECT MIN(Stok) FROM buku)", function(err, res) {
         if (err) {
             console.error("Error fetching all books: ", err);
-            result(err, null);
+            result({ error: true, message: "dari awal dah error bang di fetchingnya" }, null);
         } else {
             if (res.length === 0) {
                 result({ error: true, message: "Book not found di model" }, null);
