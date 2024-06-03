@@ -7,11 +7,11 @@ const controllerPenerbit = require("./controllers/controllerPenerbit");
 router.post('/books', controllerBuku.create);
 router.delete('/books/:idBuku', controllerBuku.delete);
 router.put('/books/:idBuku', controllerBuku.update);
+router.get('/books/lowest-stock', controllerBuku.getLowestStockBook);
+router.get('/books/lowest', controllerBuku.getLow);
 router.get('/books', controllerBuku.getAll);
 router.get('/books/search', controllerBuku.searchByName);
 router.get('/books/:idBuku', controllerBuku.getById);
-router.get('/books/lowest-stock', controllerBuku.getLowestStockBook);
-router.get('/books/lowest', controllerBuku.getLow);
 
 // Penerbit routes
 router.post('/penerbits', controllerPenerbit.create);
