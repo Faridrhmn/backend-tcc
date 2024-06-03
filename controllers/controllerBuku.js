@@ -29,7 +29,7 @@ exports.delete = function (req, res) {
             res.status(500).send({ error: true, message: err });
         } else {
             if (affectedRows === 0) {
-                res.status(404).send({ error: true, message: "Book not found" });
+                res.status(404).send({ error: true, message: "Book not found in delete" });
             } else {
                 res.json({
                     error: false,
@@ -53,7 +53,7 @@ exports.update = function (req, res) {
                 res.status(500).send({ error: true, message: err });
             } else {
                 if (affectedRows === 0) {
-                    res.status(404).send({ error: true, message: "Book not found" });
+                    res.status(404).send({ error: true, message: "Book not found in update" });
                 } else {
                     res.json({
                         error: false,
@@ -87,7 +87,7 @@ exports.getById = function (req, res) {
             res.status(500).send({ error: true, message: err });
         } else {
             if (book.length === 0) {
-                res.status(404).send({ error: true, message: "Book not found" });
+                res.status(404).send({ error: true, message: "Book not found in getById" });
             } else {
                 res.json({
                     error: false,
@@ -136,7 +136,7 @@ exports.getLow = function (req, res) {
             res.status(500).send({ error: true, message: "gagal mengambil low buku" });
         } else {
             if (books.length === 0) {
-                res.status(404).send({ error: true, message: "Book not found di kontroller" });
+                res.status(404).send({ error: true, message: "Book not found in getLow" });
             } else {
                 res.json({
                     error: false,
