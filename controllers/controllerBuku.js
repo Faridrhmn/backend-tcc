@@ -114,6 +114,7 @@ exports.searchByName = function (req, res) {
     });
 };
 
+// get lowest v1
 exports.getLowestStockBook = function (req, res) {
     Book.getLowestStockBook(function (err, book) {
         if (err) {
@@ -128,6 +129,7 @@ exports.getLowestStockBook = function (req, res) {
     });
 };
 
+// get lowest v2
 exports.getLow = function (req, res) {
     Book.getLow(function (err, books) {
         if (err) {

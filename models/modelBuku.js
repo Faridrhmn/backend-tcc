@@ -115,7 +115,7 @@ Book.getLow = function(result) {
             if (res.length === 0) {
                 result({ error: true, message: "Book not found di model" }, null);
             } else {
-                result(null, res[0]);
+                result(null, res);
             }
         }
     });
